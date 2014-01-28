@@ -1,0 +1,16 @@
+<div>
+	<div class="block <%=if stand.position==1 then  "first" else if stand.position==4 then "last" end end %>">
+		<div class="column">
+			<div class="title">
+				<%= link_to stand.name, stand_path(stand) %>
+			</div>
+			<div class="content">
+				<%= stand.content %>
+			</div>
+			<div>
+				<%= link_to "Заказать", page_slug_path("order"), class: "button" %>
+				<%= image_tag stand.image, class: "thumb" %>
+			</div>
+		</div>
+	</div>
+</div>

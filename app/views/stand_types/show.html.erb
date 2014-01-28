@@ -1,0 +1,27 @@
+<% provide(:title, @stands.name) %>
+<div class="wrapper">
+	<div class="row-fluid content">
+		<%= image_link(@stands) %>
+		<div>
+			<%= raw content(@stands) %>
+		</div>
+		<%= render @stands.stand_benefits %>
+		<div>
+			<% if @options.count>0 %>
+				<table>
+					<thead>
+						<tr>
+							<th>Наименование</th>
+							<th>Размер полотна</th>
+							<th>Цена конструкции</th>
+							<th>Стоимость печати</th>
+						</tr>
+					</thead>
+					<%= render @options %>
+				</table>
+				<%= @options[0].complect_info %>
+			<% end %>
+		</div>
+	</div>
+</div>
+

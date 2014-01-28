@@ -1,0 +1,16 @@
+<nav class="header-menu">
+	<ul>
+		<% Stand.visible.each do |stand| %>
+				<li class="menu_item <%= menu_item_state(stand)%>">
+					<%= link_to content_tag(:span, stand.name), stand_path(stand) %>  
+					<% StandType.visible.each do |st| %>
+						<% if st.stand_id==stand.id %>
+							<ul class="nested_links hidden">
+								<%= link_to content_tag(:span, st.name), stand_stand_type_slug_path(stand.slug, st.slug) %>
+							</ul>
+						<% end %> 
+					<% end  %>
+				</li>
+		<% end %>
+	</ul>
+</nav>

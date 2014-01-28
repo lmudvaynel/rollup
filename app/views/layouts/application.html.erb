@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= yield(:title) %> | Roll Up 2500</title>
+	<%= stylesheet_link_tag    "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="wrapper">
+		<div>
+			<%= render 'shared/header' %>
+		</div>
+		<%= yield %>
+		<div>
+			<%= render 'shared/footer' %>
+			<%= debug(params) if Rails.env.development? %>
+		</div>
+	</div>
+</body>
+</html>

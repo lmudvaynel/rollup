@@ -1,0 +1,21 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: roll_dev
+  username: root
+  password: '123'
+  socket:  /var/run/mysqld/mysqld.sock
+
+test: &test
+  adapter: mysql2
+  encoding: utf8
+  database: roll_test
+  username: root
+  password: '123'
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: balticit_prod
+  username: root
+  password: ''
